@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STC 관리 시스템</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f1420;--card:#1a2130;--card2:#222b3d;--line:#2f3a4f;--tx:#e8edf5;--tx2:#8b98ad;
+--bl:#4a9eff;--pu:#a78bfa;--ok:#3ddc84;--wn:#ffb84a}
+body{font-family:'Segoe UI','Malgun Gothic',sans-serif;background:var(--bg);color:var(--tx);
+min-height:100vh;padding:24px;display:flex;flex-direction:column}
+.hd{text-align:center;margin:30px 0 10px}
+h1{font-size:28px;font-weight:700}h1 span{color:var(--bl)}
+.sub{font-size:13px;color:var(--tx2);margin-top:6px}
+.wrap{max-width:920px;margin:30px auto;width:100%}
+.flow{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:30px;flex-wrap:wrap}
+.fb{background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:9px 15px;font-size:12px;color:var(--tx2)}
+.fb b{color:var(--tx);display:block;font-size:13px}
+.ar{color:var(--bl);font-size:18px;font-weight:700}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.cards{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;
+text-decoration:none;color:var(--tx);transition:.15s;display:block}
+.card:hover{border-color:var(--bl);transform:translateY(-3px)}
+.card.pu:hover{border-color:var(--pu)}
+.icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+font-size:28px;margin-bottom:16px}
+.icon.bl{background:rgba(74,158,255,.15)}.icon.pu{background:rgba(167,139,250,.15)}
+.ct{font-size:20px;font-weight:700;margin-bottom:4px}
+.cth{font-size:12px;color:var(--tx2);margin-bottom:12px}
+.cdesc{font-size:13px;color:var(--tx2);line-height:1.6}
+.tag{display:inline-block;background:var(--card2);border-radius:5px;padding:3px 9px;
+font-size:11px;color:var(--tx2);margin:3px 4px 0 0}
+.go{margin-top:16px;font-size:13px;font-weight:600;color:var(--bl)}
+.card.pu .go{color:var(--pu)}
+.link{margin-top:30px;text-align:center;font-size:12px;color:var(--tx2)}
+.foot{margin-top:auto;text-align:center;font-size:11px;color:var(--tx2);padding-top:30px}
+</style></head><body>
+<div class="hd">
+  <h1>STC <span>관리 시스템</span></h1>
+  <div class="sub">공정 → 선적 연동 대시보드   |   ระบบจัดการ STC</div>
+</div>
+<div class="wrap">
+  <div class="flow">
+    <div class="fb"><b>WIP 공정</b>자재 → FG 완성</div>
+    <div class="ar">→</div>
+    <div class="fb" style="border-color:var(--ok)"><b style="color:var(--ok)">FG 재고</b>연동 지점</div>
+    <div class="ar">→</div>
+    <div class="fb"><b>선적</b>BOX → 출하</div>
+  </div>
+  <div class="cards">
+    <a href="wip.html" class="card">
+      <div class="icon bl">🏭</div>
+      <div class="ct">1. 공정 대시보드</div>
+      <div class="cth">แดชบอร์ดกระบวนการผลิต · WIP</div>
+      <div class="cdesc">자재 도착부터 완성품까지 생산 공정을 추적합니다.</div>
+      <div style="margin-top:10px">
+        <span class="tag">공정 흐름/재고</span><span class="tag">불량 분석</span>
+        <span class="tag">생산계획</span><span class="tag">자재 수율</span>
+      </div>
+      <div class="go">공정 관리 열기 →</div>
+    </a>
+    <a href="shipping.html" class="card pu">
+      <div class="icon pu">📦</div>
+      <div class="ct">2. 선적 대시보드</div>
+      <div class="cth">แดชบอร์ดการขนส่ง · Shipping</div>
+      <div class="cdesc">FG 완성품의 포장·재고·출하를 관리합니다.</div>
+      <div style="margin-top:10px">
+        <span class="tag">적재 흐름</span><span class="tag">BOX 재고</span>
+        <span class="tag">PLAN 대사</span><span class="tag">출하 이력</span>
+      </div>
+      <div class="go">선적 관리 열기 →</div>
+    </a>
+  </div>
+  <div class="link">🔗 두 대시보드는 <b style="color:var(--ok)">FG 재고</b>로 연동됩니다 · 포장 시 공정 FG에서 차감되어 선적 재고로 이동</div>
+</div>
+<div class="foot">STC Co., Ltd. · 공무팀</div>
+</body></html>
